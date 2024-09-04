@@ -554,15 +554,89 @@ video {
   --tw-contain-style:  ;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.container {
+  width: 100%;
 }
 
-.font-bold {
-  font-weight: 700;
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
 }
 
-.underline {
-  text-decoration-line: underline;
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.leading-\[50px\] {
+  line-height: 50px;
+}
+
+.text-lime-800 {
+  --tw-text-opacity: 1;
+  color: rgb(63 98 18 / var(--tw-text-opacity));
+}
+
+.logo {
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #3f6212, -1px 1px 1px #3f6212, 1px -1px 1px #3f6212,
+    -1px -1px 1px #3f6212, 1px 0px 1px #3f6212, 0px 1px 1px #3f6212,
+    -1px 0px 1px #3f6212, 0px -1px 1px #3f6212;
 }
