@@ -1,12 +1,40 @@
-import { useRecoilValue } from "recoil";
-import { loginUserState } from "../store/loginUserState";
+import {
+  eachDayOfInterval,
+  eachWeekOfInterval,
+  endOfMonth,
+  endOfWeek,
+  getMonth,
+  startOfMonth,
+} from "date-fns";
+import { useEffect, useState } from "react";
+import { CalendarHeader } from "../components/organisms/CalendarHeader";
+import { CalendarBody } from "../components/organisms/CalendarBody";
 
 export const CalendarPage = () => {
-  const loginUser = useRecoilValue(loginUserState);
+  const today = new Date();
+  const [dateList, setDatelist] = useState<Date[][]>([]);
+
+  useEffect(() => {
+    const monthOfSundayList = eachWeekOfInterval({
+      start: startOfMonth(today),
+      end: endOfMonth(today),
+    });
+    const newDateList: Date[][] = monthOfSundayList.map((date) => {
+      return eachDayOfInterval({
+        start: date,
+        end: endOfWeek(date),
+      });
+    });
+    setDatelist(newDateList);
+  }, []);
+
   return (
-    <div>
-      <p>{loginUser.id}</p>
-      <p>{loginUser.name}</p>
-    </div>
+    <>
+      <h1 className=" font-bold text-3xl mb-5">{`${getMonth(today) + 1}月`}</h1>
+      <table className="w-[80%] border-collapse border-2 border-solid border-lime-800 table-fixed">
+        <CalendarHeader />
+        <CalendarBody currentDate={today} dateList={dateList} />
+      </table>
+    </>
   );
 };
