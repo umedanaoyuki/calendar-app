@@ -12,7 +12,11 @@ const TopPage = () => {
       </p>
       <div className="pt-[20vh]">
         <button className="bg-lime-800 text-white p-4 text-lg rounded-lg">
-          <PrimaryBtn onClick={() => navigate("/login")}>ログイン</PrimaryBtn>
+          ...
+          <PrimaryBtn size="lg" onClick={() => navigate("/login")}>
+            ログイン
+          </PrimaryBtn>
+          ...
         </button>
       </div>
     </div>
