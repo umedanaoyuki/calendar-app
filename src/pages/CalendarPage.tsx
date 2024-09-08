@@ -12,7 +12,7 @@ import { CalendarBody } from "../components/organisms/CalendarBody";
 
 export const CalendarPage = () => {
   const today = new Date();
-  const [dateList, setDatelist] = useState<Date[][]>([]);
+  const [dateList, setDateList] = useState<Date[][]>([]);
 
   useEffect(() => {
     const monthOfSundayList = eachWeekOfInterval({
@@ -25,7 +25,7 @@ export const CalendarPage = () => {
         end: endOfWeek(date),
       });
     });
-    setDatelist(newDateList);
+    setDateList(newDateList);
   }, []);
 
   return (
